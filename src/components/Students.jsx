@@ -1,8 +1,6 @@
-// src/Students.js
 import React from "react";
 
 const Students = () => {
-  // Data Setup
   const students = [
     {
       name: "Daniel Caesar",
@@ -66,7 +64,6 @@ const Students = () => {
     },
   ];
 
-  // Component Implementation (Student)
   const Student = ({ student, index }) => (
     <tr>
       <td>{index + 1}</td>
@@ -77,7 +74,6 @@ const Students = () => {
     </tr>
   );
 
-  // Rendering
   return (
     <div className="container">
       <h1>Students Record</h1>
