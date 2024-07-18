@@ -64,6 +64,8 @@ const Students = () => {
     },
   ];
 
+  // Component Implementation
+
   const Student = ({ student, index }) => (
     <tr>
       <td>{index + 1}</td>
@@ -73,6 +75,8 @@ const Students = () => {
       <td>{student.status}</td>
     </tr>
   );
+
+  // Rendering
 
   return (
     <div className="container">
