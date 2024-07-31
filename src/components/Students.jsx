@@ -1,102 +1,108 @@
-import React from "react";
+import React, { useState } from "react";
+import Student from "./Student";
 
 const Students = () => {
   const students = [
     {
-      name: "Daniel Caesar",
-      department: "Science",
-      finalGrade: 99,
-      status: "Pass",
-    },
-    {
       name: "Frank Ocean",
-      department: "Commerce",
-      finalGrade: 97,
-      status: "Pass",
-    },
-    {
-      name: "Brent Faiyaz",
-      department: "Arts",
-      finalGrade: 87,
-      status: "Pass",
-    },
-    {
-      name: "Aubrey Graham",
       department: "Science",
       finalGrade: 85,
       status: "Pass",
     },
     {
-      name: "Kendrick Lamar",
+      name: "Daniel Caesar",
       department: "Arts",
       finalGrade: 90,
       status: "Pass",
     },
     {
-      name: "Jennie Kim",
-      department: "Arts",
-      finalGrade: 86,
-      status: "Pass",
-    },
-    {
-      name: "Travis Scott",
+      name: "Billie Eilish",
       department: "Commerce",
-      finalGrade: 99,
+      finalGrade: 75,
       status: "Pass",
     },
     {
-      name: "Steve Lacy",
+      name: "Sabrina Carpenter",
       department: "Science",
-      finalGrade: 87,
+      finalGrade: 95,
+      status: "Pass",
+    },
+    {
+      name: "Summer Walker",
+      department: "Arts",
+      finalGrade: 80,
       status: "Pass",
     },
     {
       name: "Abel Tesfaye",
       department: "Commerce",
-      finalGrade: 0,
-      status: "Fail",
+      finalGrade: 88,
+      status: "Pass",
+    },
+    {
+      name: "Taylor Swift",
+      department: "Science",
+      finalGrade: 92,
+      status: "Pass",
+    },
+    {
+      name: "Brent Faiyaz",
+      department: "Arts",
+      finalGrade: 78,
+      status: "Pass",
     },
     {
       name: "Grent Perez",
+      department: "Commerce",
+      finalGrade: 60,
+      status: "Fail",
+    },
+    {
+      name: "Steve Lacy",
       department: "Science",
-      finalGrade: 0,
+      finalGrade: 74,
       status: "Fail",
     },
   ];
 
-  // Component Implementation
+  const [filter, setFilter] = useState("All");
 
-  const Student = ({ student, index }) => (
-    <tr>
-      <td>{index + 1}</td>
-      <td>{student.name}</td>
-      <td>{student.department}</td>
-      <td>{student.status === "Pass" ? student.finalGrade : ""}</td>
-      <td>{student.status}</td>
-    </tr>
+  const handleFilterChange = (status) => {
+    setFilter(status);
+  };
+
+  const filteredStudents = students.filter(
+    (student) => filter === "All" || student.status === filter
   );
 
-  // Rendering
-
   return (
-    <div className="container">
-      <h1>Students Record</h1>
-      <table border="1">
-        <thead>
-          <tr>
-            <th>No.</th>
-            <th>Student Names</th>
-            <th>Department</th>
-            <th>Final Grade</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {students.map((student, index) => (
-            <Student key={index} student={student} index={index} />
-          ))}
-        </tbody>
-      </table>
+    <div className="students-container">
+      <h1>STUDENTS LIST</h1>
+      <div className="students-filter">
+        <div className="filter-buttons">
+          <button onClick={() => handleFilterChange("Pass")}>PASS</button>
+          <button onClick={() => handleFilterChange("Fail")}>FAIL</button>
+          <button onClick={() => handleFilterChange("All")}>ALL</button>
+        </div>
+      </div>
+      <div className="container">
+        <table>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Student Names</th>
+              <th>Department</th>
+              <th>Final Grade</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredStudents.map((student, index) => (
+              <Student key={index} student={student} index={index + 1} />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
