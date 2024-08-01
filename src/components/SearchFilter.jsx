@@ -9,7 +9,7 @@ const SearchFilter = ({ searchQuery, setSearchQuery }) => {
     <div className="search-filter">
       <input
         type="text"
-        placeholder="Search by name or address..."
+        placeholder="Search..."
         value={searchQuery}
         onChange={InputChange}
       />

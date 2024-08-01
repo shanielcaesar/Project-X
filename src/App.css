@@ -1,6 +1,5 @@
-* {
-  font-family: "Poppins", sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 :root {
   --blue: #46a6f5;
@@ -16,6 +15,7 @@
 body {
   background-color: var(--background-color);
   margin: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 nav {
@@ -29,11 +29,12 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: center;
   justify-content: flex-start;
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 0 10px;
 }
 
 nav ul li a {
@@ -51,64 +52,24 @@ nav ul li a:hover {
   color: var(--blue);
 }
 
-h1 {
-  text-align: center;
-  margin-top: 50px;
-  color: var(--text-color);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-decoration: none;
-}
-
-th,
-td {
-  padding: 10px;
-  text-align: left;
-}
-
-th {
-  background-color: #c8f5c9;
-  color: var(--text-color);
-}
-
-tr:hover {
-  background-color: #c8f5c9;
-}
-
-.container {
-  background-color: var(--white);
-  margin: 20px;
-  color: var(--text-color);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.students-filter {
-  margin-right: 20px;
-}
-
-.students-container {
-  margin-top: 35px;
-}
-
-h1 {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.head {
-  background-color: var(--white);
+.logo {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 50px;
-  width: 100%;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* font-size: 25px;
+  font-weight: 200;
+  font-family: "Lobster", cursive;
+  color: var(--blue); */
+}
+
+.logo img {
+  height: 35px;
+  width: 35px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--text-color);
 }
 
 .search-filter {
@@ -117,12 +78,12 @@ h1 {
 }
 
 .search-filter input {
-  padding: 8px;
+  padding: 10px;
   padding-left: 20px;
   width: 100%;
   box-sizing: border-box;
   font-size: 14px;
-  border-radius: 5px;
+  border-radius: 50px;
   border: none;
   color: var(--text-color);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -164,7 +125,7 @@ h1 {
   background-color: var(--blue);
   color: var(--white);
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 50px;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -177,7 +138,7 @@ h1 {
 .citizens-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 15px;
+  gap: 20px;
   color: var(--text-color);
 }
 
@@ -225,11 +186,19 @@ h1 {
   background-color: var(--green);
   color: white;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 50px;
   font-weight: bold;
   transition: background-color 0.3s;
 }
 
 .toggle-button:hover {
   background-color: var(--green-hover);
+}
+
+.citizen-status .active {
+  color: rgb(91, 212, 91);
+}
+
+.citizen-status .inactive {
+  color: rgb(252, 111, 111);
 }

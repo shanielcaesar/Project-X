@@ -6,7 +6,6 @@ import {
   NavLink,
 } from "react-router-dom";
 import Citizens from "./components/Citizens";
-import Students from "./components/Students";
 
 import "./App.css";
 
@@ -15,9 +14,12 @@ function App() {
     <Router>
       <nav>
         <ul>
+          <li className="logo">
+            <img src="/images/chrome.png" alt="Concepcion Logo" />
+          </li>
           <li>
             <NavLink
-              to="/home"
+              to="/"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Home
@@ -31,20 +33,11 @@ function App() {
               Citizens
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/students-record"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              Students
-            </NavLink>
-          </li>
         </ul>
       </nav>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/citizens-record" element={<Citizens />} />
-        <Route path="/students-record" element={<Students />} />
       </Routes>
     </Router>
   );
@@ -53,7 +46,7 @@ function App() {
 function Home() {
   return (
     <div className="home">
-      <h1>HELLOOO</h1>
+      <h1>HELLOOOOOOOOOOOOOOOOOOOO!!!!!!</h1>
     </div>
   );
 }

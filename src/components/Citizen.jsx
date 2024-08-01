@@ -8,7 +8,10 @@ const Citizen = ({ citizen, index, toggleStatus }) => {
         <h3 className="citizen-name">{citizen.name}</h3>
         <p className="citizen-age">Age: {citizen.age}</p>
         <p className="citizen-address">Address: {citizen.address}</p>
-        <p className="citizen-status">Status: {citizen.status}</p>
+        <p className="citizen-status">
+          Status:{" "}
+          <span className={citizen.status.toLowerCase()}>{citizen.status}</span>
+        </p>
       </div>
       <button onClick={() => toggleStatus(index)} className="toggle-button">
         Toggle Status
